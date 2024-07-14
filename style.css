@@ -1,0 +1,340 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Sets the font family to Roboto with sans-serif as a fallback */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    background-color: #0e0e0e; /* Sets the background color to dark gray */
+    color: #eaeaea; /* Sets the text color to light gray */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    font-size: 1.3rem; /* Sets the base font size */
+    user-select: none; /* Prevents text selection */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+header {
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; /* Distributes space between items */
+    align-items: center; /* Aligns items vertically in the center */
+    padding: 1.5rem; /* Adds padding around the header */
+    background: #1c1c1c; /* Sets the background color to dark gray */
+    color: #eaeaea; /* Sets the text color to light gray */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    position: sticky; /* Makes the header stick to the top */
+    top: 0; /* Positions the header at the top */
+    z-index: 1000; /* Ensures the header is on top of other elements */
+}
+
+.logo-banner {
+    font-size: 1.5em; /* Sets the font size for the logo */
+    color: #FFA500; /* Sets the logo color to orange */
+}
+
+nav ul {
+    list-style: none; /* Removes default list styling */
+    display: flex; /* Uses flexbox for layout */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+nav ul li {
+    margin: 0 1em; /* Adds margin between list items */
+}
+
+nav ul li a {
+    color: #eaeaea; /* Sets the link color to light gray */
+    text-decoration: none; /* Removes underline from links */
+    padding: 0.5em 1em; /* Adds padding inside the links */
+    border-radius: 5px; /* Rounds the corners of the links */
+    transition: background-color 0.3s, color 0.3s; /* Adds transition for background color and text color */
+}
+
+nav ul li a:hover {
+    background-color: #008080; /* Changes background color on hover */
+    color: #fff; /* Changes text color on hover */
+}
+
+.search-bar {
+    display: flex; /* Uses flexbox for layout */
+    align-items: center; /* Aligns items vertically in the center */
+    margin: 0 auto; /* Centers the search bar */
+}
+
+.search-bar input {
+    padding: 0.5em; /* Adds padding inside the input */
+    border-radius: 5px 0 0 5px; /* Rounds the left corners of the input */
+    border: 1px solid #444; /* Sets the border color to dark gray */
+    background: #333; /* Sets the background color to dark gray */
+    color: #eaeaea; /* Sets the text color to light gray */
+    outline: none; /* Removes the default outline */
+}
+
+.search-bar button {
+    padding: 0.5em; /* Adds padding inside the button */
+    border-radius: 0 5px 5px 0; /* Rounds the right corners of the button */
+    border: 1px solid #444; /* Sets the border color to dark gray */
+    background: #008080; /* Sets the background color to teal */
+    color: #eaeaea; /* Sets the text color to light gray */
+    cursor: pointer; /* Changes the cursor to a pointer */
+    outline: none; /* Removes the default outline */
+}
+
+.search-bar button:hover {
+    background: #005f5f; /* Changes background color on hover */
+}
+
+.account-info {
+    background: #008080; /* Sets the background color to teal */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Rounds the corners */
+    padding: 0.5em 1em; /* Adds padding inside the button */
+    color: #eaeaea; /* Sets the text color to light gray */
+    cursor: pointer; /* Changes the cursor to a pointer */
+    transition: background-color 0.3s; /* Adds transition for background color */
+}
+
+.account-info:hover {
+    background: #005f5f; /* Changes background color on hover */
+}
+
+main {
+    padding: 10vh 15vw; /* Adds padding inside the main element */
+    display: grid; /* Uses CSS grid for layout */
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    grid-gap: 2rem; /* Adds space between grid items */
+}
+
+.hero {
+    grid-column: span 4; /* Spans the element across 4 columns */
+    background-image: url('hero-image.jpg'); /* Sets the background image */
+}
+
+.subscribe {
+    grid-column: span 2; /* Spans the element across 2 columns */
+    background-image: url('subscribe-image.jpg'); /* Sets the background image */
+}
+
+.featured-reviews {
+    grid-column: span 2; /* Spans the element across 2 columns */
+    background-image: url('featured-reviews-image.jpg'); /* Sets the background image */
+}
+
+.latest-tech {
+    grid-column: span 2; /* Spans the element across 2 columns */
+    background-image: url('latest-tech-image.jpg'); /* Sets the background image */
+}
+
+.top-tutorials {
+    grid-column: span 2; /* Spans the element across 2 columns */
+    background-image: url('top-tutorials-image.jpg'); /* Sets the background image */
+}
+
+.community-discussion {
+    grid-column: span 4; /* Spans the element across 4 columns */
+    background-image: url('community-discussion-image.jpg'); /* Sets the background image */
+}
+
+section {
+    padding: 2rem; /* Adds padding inside the section */
+    background: #1c1c1c; /* Sets the background color to dark gray */
+    border-radius: 10px; /* Rounds the corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Adds a shadow effect */
+    opacity: 0; /* Sets initial opacity */
+    transform: translateY(50px); /* Moves the element down initially */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Adds transition for opacity and transform */
+    background-size: cover; /* Ensures background image covers the section */
+    background-position: center; /* Centers the background image */
+    color: #fff; /* Sets the text color to white */
+    position: relative; /* Allows positioning of child elements */
+    will-change: opacity, transform; /* Optimizes performance for opacity and transform changes */
+}
+
+section.visible {
+    opacity: 1; /* Sets opacity to 1 when visible */
+    transform: translateY(0); /* Moves the element to its original position */
+}
+
+section .description {
+    background: rgba(0, 0, 0, 0.7); /* Sets the background color with transparency */
+    padding: 1rem; /* Adds padding inside the description */
+    border-radius: 5px; /* Rounds the corners */
+    margin-top: 1rem; /* Adds margin at the top */
+    width: 50%; /* Sets the width to 50% */
+}
+
+.hero-title, .subscribe-title, .featured-reviews-title, .latest-tech-title, .top-tutorials-title, .community-discussion-title {
+    color: #FFA500; /* Consistent theme color for titles */
+}
+
+.read-more {
+    position: absolute; /* Positions the button absolutely */
+    top: 1rem; /* Positions the button 1rem from the top */
+    right: 1rem; /* Positions the button 1rem from the right */
+    background: rgba(0, 95, 95, 1.0); /* Sets the background color with transparency */
+    color: #fff; /* Sets the text color to white */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Rounds the corners */
+    padding: 0.5em 1em; /* Adds padding inside the button */
+    cursor: pointer; /* Changes the cursor to a pointer */
+    transition: background-color 0.3s; /* Adds transition for background color */
+}
+
+.read-more:hover {
+    background: rgba(0, 95, 95, 0.6); /* Changes background color on hover */
+}
+
+/* Footer Section */
+footer {
+    padding: 2rem; /* Adds padding inside the footer */
+    background: linear-gradient(to right, #1c1c1c, #333); /* Adds a gradient background */
+    text-align: center; /* Centers the text */
+    opacity: 0; /* Sets initial opacity */
+    transform: translateY(50px); /* Moves the element down initially */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Adds transition for opacity and transform */
+    will-change: opacity, transform; /* Optimizes performance for opacity and transform changes */
+    color: #eaeaea; /* Sets the text color to light gray */
+}
+
+footer.visible {
+    opacity: 1; /* Sets opacity to 1 when visible */
+    transform: translateY(0); /* Moves the element to its original position */
+}
+
+.footer-links {
+    display: flex; /* Uses flexbox for layout */
+    justify-content: center; /* Centers the flex items */
+    flex-wrap: wrap; /* Allows the items to wrap to the next line */
+    margin-bottom: 1rem; /* Adds margin at the bottom */
+}
+
+.footer-links a {
+    color: #FFA500; /* Sets the link color to orange */
+    text-decoration: none; /* Removes underline from links */
+    margin: 0 1rem; /* Adds margin between links */
+    transition: color 0.3s; /* Adds transition for color */
+}
+
+.footer-links a:hover {
+    color: #fff; /* Changes link color on hover */
+}
+
+.social-media-icons {
+    margin: 1rem 0; /* Adds margin at the top and bottom */
+}
+
+.social-media-icons a {
+    margin: 0 0.5rem; /* Adds margin between icons */
+    display: inline-block; /* Uses inline-block for layout */
+    transition: transform 0.3s; /* Adds transition for transform */
+}
+
+.social-media-icons a:hover {
+    transform: scale(1.2); /* Scales the icon on hover */
+}
+
+.social-media-icons img {
+    width: 32px; /* Sets the width of the icons */
+    height: 32px; /* Sets the height of the icons */
+}
+
+footer p {
+    margin-top: 1rem; /* Adds margin at the top */
+    font-size: 0.9rem; /* Sets the font size */
+    color: #999; /* Sets the text color to light gray */
+}
+
+.footer-links a, .social-media-icons img, footer p {
+    opacity: 0; /* Sets initial opacity */
+    animation: fadeInText 1s forwards ease-in-out; /* Adds fade-in animation */
+}
+
+.footer-links a:nth-child(1) {
+    animation-delay: 0.2s; /* Delays the animation */
+}
+
+.footer-links a:nth-child(2) {
+    animation-delay: 0.4s; /* Delays the animation */
+}
+
+.footer-links a:nth-child(3) {
+    animation-delay: 0.6s; /* Delays the animation */
+}
+
+.footer-links a:nth-child(4) {
+    animation-delay: 0.8s; /* Delays the animation */
+}
+
+.footer-links a:nth-child(5) {
+    animation-delay: 1s; /* Delays the animation */
+}
+
+.footer-links a:nth-child(6) {
+    animation-delay: 1.2s; /* Delays the animation */
+}
+
+.footer-links a:nth-child(7) {
+    animation-delay: 1.4s; /* Delays the animation */
+}
+
+.social-media-icons img:nth-child(1) {
+    animation-delay: 1.6s; /* Delays the animation */
+}
+
+.social-media-icons img:nth-child(2) {
+    animation-delay: 1.8s; /* Delays the animation */
+}
+
+.social-media-icons img:nth-child(3) {
+    animation-delay: 2s; /* Delays the animation */
+}
+
+.social-media-icons a {
+    margin: 0 0.5rem; /* Adds margin between icons */
+    display: inline-block; /* Uses inline-block for layout */
+    transition: transform 0.3s; /* Adds transition for transform */
+    text-decoration: none; /* Removes underline from links */
+    color: rgba(180, 180, 180, 1.0); /* Sets the color to light gray */
+}
+
+.social-media-icons a:hover {
+    transform: scale(1.1); /* Scales the icon on hover */
+}
+
+.social-media-icons img {
+    width: 32px; /* Sets the width of the icons */
+    height: 32px; /* Sets the height of the icons */
+    transition: filter 0.3s; /* Adds transition for filter */
+}
+
+.social-media-icons img:hover {
+    color: rgba(255, 255, 255, 1.0); /* Sets the color to white */
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Adds slight movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px; /* Sets the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #1c1c1c; /* Sets the background color of the scrollbar track */
+    border-radius: 10px; /* Rounds the corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333; /* Sets the background color of the scrollbar thumb */
+    border-radius: 10px; /* Rounds the corners */
+    border: 3px solid #1c1c1c; /* Adds a border to the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #008080; /* Changes background color on hover */
+}
